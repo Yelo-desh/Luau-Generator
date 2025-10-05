@@ -1,4 +1,4 @@
-:root{
+:root{ 
   --bg:#0f1720;
   --card:#0b1220;
   --accent:#4f46e5;
@@ -14,26 +14,20 @@ body{
   background:linear-gradient(180deg,#071027,#07122b);
   color:var(--text);
   font-family:'Inter', system-ui, sans-serif;
-  transition: background 0.3s;
 }
 
 .container{
-  max-width:900px;
-  margin:40px auto;
-  padding:24px;
+  max-width:95%;
+  margin:20px auto;
+  padding:20px;
   background:rgba(255,255,255,0.03);
   border-radius:16px;
   box-shadow:0 15px 35px rgba(2,6,23,0.8);
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-.container:hover{
-  box-shadow:0 20px 50px rgba(2,6,23,0.9);
-  transform: translateY(-3px);
 }
 
 h1{
   margin:0 0 16px;
-  font-size:28px;
+  font-size:24px;
   color:var(--accent);
   text-align:center;
 }
@@ -56,11 +50,9 @@ textarea{
   resize:vertical;
   font-family:monospace;
   font-size:14px;
-  transition: border 0.3s, box-shadow 0.3s;
 }
 textarea:focus{
   border:1px solid var(--accent);
-  box-shadow:0 0 10px var(--accent);
   outline:none;
 }
 
@@ -77,29 +69,19 @@ textarea:focus{
   border:1px solid rgba(255,255,255,0.08);
   background:rgba(255,255,255,0.02);
   color:var(--text);
-  transition: border 0.3s;
 }
 #temperature:focus{
   border-color:var(--accent);
 }
 
 button{
-  background:linear-gradient(45deg,var(--accent),var(--accent-hover));
+  background:var(--accent);
   border:none;
   padding:12px 18px;
   border-radius:10px;
   color:white;
   cursor:pointer;
   font-weight:600;
-  transition: transform 0.1s, box-shadow 0.2s;
-}
-button:hover{
-  background:linear-gradient(45deg,var(--accent-hover),var(--accent));
-  box-shadow:0 5px 15px rgba(79,70,229,0.5);
-}
-button:active{
-  transform:translateY(2px);
-  box-shadow:0 3px 8px rgba(79,70,229,0.5);
 }
 
 .output{
@@ -110,7 +92,6 @@ button:active{
   overflow:auto;
   min-height:180px;
   margin-top:16px;
-  transition: background 0.3s;
 }
 
 .notes{
@@ -120,9 +101,27 @@ button:active{
   text-align:center;
 }
 
+/* ======== موبايل ======== */
+@media(max-width:768px){
+  .container{
+    padding:16px;
+  }
+  h1{
+    font-size:22px;
+  }
+  textarea, .output{
+    font-size:13px;
+    min-height:120px;
+  }
+}
+
 @media(max-width:600px){
   .controls{
     flex-direction:column;
     align-items:stretch;
+    gap:10px;
+  }
+  #temperature, button{
+    width:100%;
   }
 }
