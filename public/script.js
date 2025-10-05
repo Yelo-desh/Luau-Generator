@@ -5,7 +5,7 @@ const outputEl = document.getElementById('output');
 const tempRange = document.getElementById('temperature');
 const tempVal = document.getElementById('tempVal');
 
-const API_BASE = 'http://localhost:3000'; // عدّله لو استضفت الخادم
+const API_BASE = 'https://luau-generator.onrender.com';
 
 tempRange.addEventListener('input', () => { tempVal.textContent = tempRange.value; });
 
